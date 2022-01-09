@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trusted_influencers",
+  "info": {
+    "singularName": "trusted-influencer",
+    "pluralName": "trusted-influencers",
+    "displayName": "TrustedInfluencer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Telegram": {
+      "type": "string",
+      "unique": true
+    },
+    "Twitter": {
+      "type": "string",
+      "unique": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "PastProjects": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

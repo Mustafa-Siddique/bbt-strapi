@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trusted_devs",
+  "info": {
+    "singularName": "trusted-dev",
+    "pluralName": "trusted-devs",
+    "displayName": "TrustedDev",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "About": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": false,
+      "unique": true
+    },
+    "Telegram": {
+      "type": "string",
+      "required": true
+    },
+    "LinkedIn": {
+      "type": "string"
+    },
+    "PastProjects": {
+      "type": "json"
+    },
+    "UpcomiongProjects": {
+      "type": "json"
+    },
+    "trusted_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trusted-project.trusted-project",
+      "inversedBy": "trusted_devs"
+    }
+  }
+}

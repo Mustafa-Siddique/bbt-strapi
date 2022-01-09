@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_tokens",
+  "info": {
+    "singularName": "featured-token",
+    "pluralName": "featured-tokens",
+    "displayName": "FeaturedToken",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TokenName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "trusted_project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::trusted-project.trusted-project",
+      "inversedBy": "featured_token"
+    }
+  }
+}

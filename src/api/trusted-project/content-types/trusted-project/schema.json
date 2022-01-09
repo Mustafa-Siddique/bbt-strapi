@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trusted_projects",
+  "info": {
+    "singularName": "trusted-project",
+    "pluralName": "trusted-projects",
+    "displayName": "TrustedProject"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "LaunchDate": {
+      "type": "date",
+      "required": true
+    },
+    "trusted_devs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trusted-dev.trusted-dev",
+      "inversedBy": "trusted_projects"
+    },
+    "featured_token": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::featured-token.featured-token",
+      "inversedBy": "trusted_project"
+    }
+  }
+}

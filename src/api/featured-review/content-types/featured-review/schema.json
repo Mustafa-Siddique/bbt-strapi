@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_reviews",
+  "info": {
+    "singularName": "featured-review",
+    "pluralName": "featured-reviews",
+    "displayName": "FeaturedReview"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "For": {
+      "type": "string",
+      "required": true
+    },
+    "Points": {
+      "type": "decimal",
+      "required": true,
+      "max": 10,
+      "min": 0
+    },
+    "ReviewTxt": {
+      "type": "richtext"
+    },
+    "WalletAddress": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
